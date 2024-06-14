@@ -65,7 +65,7 @@ To contribute to the development of Viewer 360, follow these steps:
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/ilyaistomin789/viewer360-lib
+git clone https://github.com/ilyaistomin789/viewer360
 ```
 
 2. Install dependencies:
