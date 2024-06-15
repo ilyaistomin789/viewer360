@@ -1,7 +1,6 @@
-name: 'Chromatic Deployment'
+name: Chromatic Deployment
 
 on: push
-
 jobs:
   chromatic:
     name: 'Run Chromatic'
@@ -10,6 +9,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
+      - name: Install dependencies
       - run: npm install
       - uses: chromaui/action@latest
         with:
