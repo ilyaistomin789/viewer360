@@ -10,8 +10,8 @@ jobs:
         with:
           fetch-depth: 0
       - name: Install dependencies
-      - run: npm install
-      - uses: chromaui/action@latest
+        run: npm install
+        uses: chromaui/action@latest
         with:
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
           token: ${{ secrets.GITHUB_TOKEN }}
