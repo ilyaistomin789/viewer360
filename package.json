@@ -18,7 +18,7 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "prepublishOnly": "npm run build",
-    "chromatic": "npx chromatic"
+    "chromatic": "chromatic"
   },
   "dependencies": {
     "glob": "^10.4.1",
