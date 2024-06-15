@@ -14,8 +14,11 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 18
+          cache: 'npm'
+      - name: Install latest npm
+        run: npm install -g npm@latest
       - name: Install dependencies
-        run: npm cache clean & npm ci
+        run: npm ci
       - name: Run Chromatic
         uses: chromaui/action@latest
         with:
