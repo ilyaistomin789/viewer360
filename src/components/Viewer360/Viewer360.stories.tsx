@@ -44,3 +44,9 @@ export const ParameterizedSpeed: Story = {
 		maxMovement: 30,
 	},
 };
+export const ParameterizedFPS: Story = {
+	args: {
+		autoMove: true,
+		fps: 15
+	},
+};

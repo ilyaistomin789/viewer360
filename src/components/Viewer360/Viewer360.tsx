@@ -21,6 +21,7 @@ interface Props {
 	maxMovement?: number;
 	imageClassName?: string;
 	className?: string;
+	fps?: number;
 }
 
 export const Viewer360: React.FC<Props> = ({
@@ -30,6 +31,7 @@ export const Viewer360: React.FC<Props> = ({
 	maxMovement = 20,
 	className: _className,
 	imageClassName: _imageClassName,
+	fps = 60,
 }) => {
 	const defaultValues: Viewer360State = {
 		autoMove: initialAutoMove,
@@ -127,8 +129,14 @@ export const Viewer360: React.FC<Props> = ({
 	}, [autoMove, initialAutoMove, initialMovementSpeed, movement, movementSpeed]);
 
 	const initializeAutoRotate = () => {
+		let then = performance.now();
+		const interval = 1000 / fps;
+
 		const changeIndex = (rafTimmy: number) => {
-			if (images.length) {
+			const delta = rafTimmy - then;
+
+			if (images.length && delta > interval) {
+				then = rafTimmy - (delta % interval);
 				if (!timmy || rafTimmy - timmy >= movementSpeed) {
 					const imageIndexArray = images.map((_, idx) => idx);
 

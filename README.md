@@ -43,6 +43,7 @@ const App: React.FC = () => {
         automove={true}
         initialMovement={1}
         maxMovement={20}
+        fps={60}
       />
     </div>
   );
@@ -58,6 +59,7 @@ export default App;
 | automove | boolean | false | If the value is true, the image will rotate automatically 360 degrees |
 | initialMovement | number | 1 | The initial speed when rotating the image |
 | maxMovement | number | 20 | The max speed of movement |
+| fps | number | 60 | Frame per second value |
 
 # Development
 

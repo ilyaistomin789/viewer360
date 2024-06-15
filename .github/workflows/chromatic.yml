@@ -14,13 +14,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'npm'
-      - name: Install latest npm
-        run: npm install -g npm@latest
       - name: Install dependencies
-        run: npm ci
-      - name: Install Storybook CLI
-        run: npm install storybook
+        run: yarn
       - name: Run Chromatic
         uses: chromaui/action@latest
         with:
